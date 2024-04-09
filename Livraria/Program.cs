@@ -10,7 +10,8 @@ namespace Livraria
     {
         static void Main(string[] args)
         {
-
+            Menu menu = new Menu();
+            menu.OperacaoMenu();
         }//fim do main
     }//fim da program
 }//fim do namespace
