@@ -8,10 +8,12 @@ namespace Livraria
 {
     class ControlPessoa
     {
+        DAOPessoa person;//Conexão com pessoa
         Pessoa model;//Conectar com a classe pessoa
         private int opcao;
         public ControlPessoa()
         {
+            person = new DAOPessoa();
             model = new Pessoa();//Acesso a todos os métodos da classe pessoa
             ModificarOpcao = 0;
         }//fim do construtor
@@ -68,7 +70,7 @@ namespace Livraria
                     string cargo = Console.ReadLine();
 
                     //Chamar o método cadastrar
-                    model.Cadastrar(CPF, nome, telefone, endereco, data, login, senha, cargo);
+                    person.Inserir(CPF, nome, telefone, endereco, data, login, senha, "Ativo", cargo);
                     break;
                 case 2:
                     Console.WriteLine("Informe o CPF que deseja consultar: ");
